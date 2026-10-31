@@ -2,6 +2,8 @@
   "name": "actualiza-pension-alimenticia",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Enrique Silva",
   "type": "module",
   "scripts": { "test": "node --test tests/" }
 }

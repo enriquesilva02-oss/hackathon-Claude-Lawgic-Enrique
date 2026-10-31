@@ -106,3 +106,7 @@ docs/                 Capturas, video y presentación
 ## Aviso
 
 Herramienta de apoyo para abogados. Revise el resultado y sus fundamentos antes de presentarlo ante un tribunal.
+
+## Licencia
+
+© 2026 Enrique Silva. **Todos los derechos reservados.** Puede usar la aplicación publicada; no puede copiar, modificar ni redistribuir el código, el diseño, los textos o los videos sin autorización por escrito. Detalles y excepciones (datos oficiales públicos y la biblioteca docx con licencia MIT) en [LICENSE](LICENSE).

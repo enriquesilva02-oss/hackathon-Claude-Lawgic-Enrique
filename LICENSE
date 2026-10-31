@@ -1,0 +1,25 @@
+Copyright © 2026 Enrique Silva. Todos los derechos reservados.
+
+Actualiza Pensión (el código, el diseño, los textos, las capturas y los videos de este repositorio) es propiedad de su autor.
+
+Se permite:
+  - Usar la aplicación publicada en línea para fines personales o profesionales.
+  - Consultar el código en este repositorio.
+
+No se permite, sin autorización previa y por escrito del autor:
+  - Copiar, reproducir, modificar, distribuir, publicar o sublicenciar el código, el diseño,
+    los textos o los videos, total o parcialmente.
+  - Crear obras derivadas o incorporar cualquier parte de este proyecto en otro producto o servicio.
+  - Usar este proyecto o su nombre con fines comerciales.
+
+Excepciones:
+  - Los datos oficiales incluidos en data/ (salarios mínimos publicados en el Diario Oficial de la
+    Federación e Índice Nacional de Precios al Consumidor del INEGI) son información pública y
+    conservan su propia naturaleza; aquí solo se reservan su recopilación y presentación.
+  - La biblioteca de terceros incluida en vendor/docx.umd.js (docx, © 2016 Dolan) se distribuye con
+    su propia licencia MIT, contenida en vendor/docx.LICENSE.
+
+La aplicación se ofrece "tal cual", como herramienta de apoyo, sin garantía de ningún tipo. El usuario
+es responsable de revisar los cálculos y sus fundamentos antes de usarlos en cualquier procedimiento.
+
+Para solicitar autorización: a través de GitHub (https://github.com/enriquesilva02-oss).
