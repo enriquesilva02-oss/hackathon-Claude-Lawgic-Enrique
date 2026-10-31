@@ -3,7 +3,7 @@
 **Actualiza pensiones alimenticias y genera la planilla de liquidación en minutos, con fundamento jurídico y fuentes oficiales verificables.**
 
 🔗 **Pruébala en línea:** https://enriquesilva02-oss.github.io/hackathon-Claude-Lawgic-Enrique/
-🎬 **Video tutorial (4 min):** [docs/video/tutorial-actualiza-pension.mp4](docs/video/tutorial-actualiza-pension.mp4)
+🎬 **Pitch en video (1 min):** [docs/video/pitch-1-minuto.mp4](docs/video/pitch-1-minuto.mp4) · **Tutorial completo (4 min):** [docs/video/tutorial-actualiza-pension.mp4](docs/video/tutorial-actualiza-pension.mp4)
 🗣️ **Presentación para el hackathon:** [docs/PRESENTACION.md](docs/PRESENTACION.md)
 
 Proyecto del hackathon **Claude × Lawgic**. Lo creó el Lic. Enrique Silva (abogado litigante en Jalisco) con su agente legal construido sobre Claude.

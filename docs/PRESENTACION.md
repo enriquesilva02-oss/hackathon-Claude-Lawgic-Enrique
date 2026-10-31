@@ -2,7 +2,7 @@
 
 **Equipo:** Lic. Enrique Silva (abogado litigante, Guadalajara, Jalisco) y su agente legal «Paco», construido con Claude.
 **Demo en línea:** https://enriquesilva02-oss.github.io/hackathon-Claude-Lawgic-Enrique/
-**Video:** `docs/video/tutorial-actualiza-pension.mp4` (4 min)
+**Videos:** `docs/video/pitch-1-minuto.mp4` (pitch de 1 min) · `docs/video/tutorial-actualiza-pension.mp4` (tutorial de 4 min)
 
 ---
 
