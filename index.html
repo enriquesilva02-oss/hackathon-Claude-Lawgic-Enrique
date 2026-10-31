@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actualiza Pensión</title>
+<meta name="description" content="Actualización de pensiones alimenticias por salario mínimo (con MIR) e INPC, con planilla de liquidación.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="encabezado">
+  <div class="contenedor encabezado-interior">
+    <div class="marca">
+      <div class="logo" aria-hidden="true">⚖</div>
+      <div>
+        <h1>Actualiza <span>Pensión</span></h1>
+        <p>Actualiza pensiones alimenticias y genera la planilla de liquidación, con fundamento y fuentes oficiales.</p>
+      </div>
+    </div>
+    <p class="pastilla">🔒 Tus datos no salen de este navegador</p>
+  </div>
+</header>
+
+<main class="contenedor">
+  <form id="formulario" autocomplete="off" novalidate>
+
+    <!-- PASO 1 -->
+    <section class="paso">
+      <div class="paso-cabeza"><span class="numero">1</span><div><h2>La pensión</h2><p>Monto original y cómo se pactó su actualización.</p></div></div>
+      <div class="rejilla">
+        <label class="campo">Mensualidad original
+          <span class="con-prefijo"><span>$</span><input name="pension" type="number" step="0.01" min="0" inputmode="decimal" required placeholder="0.00"></span>
+        </label>
+        <div class="campo">Mes en que se fijó
+          <span data-fecha="fijacion" data-tipo="mes" data-valor="" data-etiqueta="Fijación:"></span>
+        </div>
+        <label class="campo">Actualizar hasta el año
+          <select name="ultimoAnio" id="ultimoAnio"></select>
+        </label>
+      </div>
+      <div class="campo">Método de actualización pactado
+        <div class="segmentado" role="radiogroup">
+          <label><input type="radio" name="metodo" value="sm" checked><span><strong>Salario mínimo</strong><small>Con MIR desde 2017 (1a./J. 152/2024)</small></span></label>
+          <label><input type="radio" name="metodo" value="inpc"><span><strong>INPC</strong><small>CC Jalisco, art. 442</small></span></label>
+        </div>
+      </div>
+      <details class="avanzado">
+        <summary>Opciones avanzadas</summary>
+        <label class="campo corto">Primer año con incremento
+          <input name="primerAnio" type="number" min="2010" max="2030" value="2010">
+          <small class="ayuda">Por defecto, el año siguiente a la fijación.</small>
+        </label>
+      </details>
+    </section>
+
+    <!-- PASO 2 -->
+    <section class="paso">
+      <div class="paso-cabeza"><span class="numero">2</span><div><h2>Planilla de liquidación</h2><p>Periodo a cobrar, saldo previo, pagos y abonos. <em>Opcional.</em></p></div></div>
+      <div class="rejilla">
+        <div class="campo">Desde
+          <span data-fecha="desde" data-tipo="mes" data-etiqueta="Desde:"></span>
+        </div>
+        <div class="campo">Hasta
+          <span data-fecha="hasta" data-tipo="mes" data-etiqueta="Hasta:"></span>
+          <button type="button" class="enlace" id="hastaHoy">Usar el mes actual</button>
+        </div>
+        <label class="campo corto">Día de pago
+          <input name="dia" type="number" min="1" max="31" value="5">
+        </label>
+      </div>
+
+      <div class="bloque" id="bloqueSaldo">
+        <h3>Saldo inicial <small>p. ej., sentencia de liquidación previa</small></h3>
+        <div class="rejilla">
+          <label class="campo">Monto
+            <span class="con-prefijo"><span>$</span><input name="saldoMonto" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0.00"></span>
+          </label>
+          <div class="campo">Fecha
+            <span data-fecha="saldoFecha" data-tipo="dia" data-etiqueta="Saldo inicial:"></span>
+          </div>
+          <label class="campo ancho">Concepto
+            <input name="saldoConcepto" type="text" placeholder="SENTENCIA DE LIQUIDACIÓN">
+          </label>
+        </div>
+      </div>
+
+      <div class="bloque" id="bloquePagos">
+        <label class="interruptor"><input type="checkbox" name="pagoActivo"><span class="pista"></span>
+          <span>El deudor <strong>sí pagó</strong> la pensión, pero <strong>sin actualizar</strong>: solo se cobra la diferencia</span></label>
+        <div class="rejilla" id="pagoCampos" hidden>
+          <label class="campo">Pagaba cada mes
+            <span class="con-prefijo"><span>$</span><input name="pagoMonto" type="number" step="0.01" min="0" inputmode="decimal"></span>
+          </label>
+          <div class="campo">Desde
+            <span data-fecha="pagoDesde" data-tipo="mes" data-etiqueta="Pagó desde:"></span>
+          </div>
+          <div class="campo">Hasta
+            <span data-fecha="pagoHasta" data-tipo="mes" data-etiqueta="Pagó hasta:"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloque" id="bloqueAbonos">
+        <h3>Abonos y billetes de depósito</h3>
+        <div id="abonos" class="lista"></div>
+        <button type="button" id="agregarAbono" class="secundario pequeno">＋ Agregar abono</button>
+      </div>
+    </section>
+
+    <!-- PASO 3 -->
+    <section class="paso">
+      <div class="paso-cabeza"><span class="numero">3</span><div><h2>Otros conceptos</h2><p>Colegiaturas, gastos médicos, uniformes… Se liquidan aparte. <em>Opcional.</em></p></div></div>
+      <div id="conceptos" class="lista"></div>
+      <datalist id="categorias">
+        <option value="Colegiaturas"><option value="Gastos médicos"><option value="Medicamentos">
+        <option value="Uniformes y útiles"><option value="Actividades extraescolares"><option value="Otros">
+      </datalist>
+      <button type="button" id="agregarConcepto" class="secundario pequeno">＋ Agregar concepto</button>
+      <div class="bloque" id="bloqueOtrosInpc">
+        <label class="interruptor"><input type="checkbox" name="otrosInpc"><span class="pista"></span>
+          <span>Actualizar cada concepto por <strong>INPC</strong> desde su fecha hasta el corte</span></label>
+        <div class="rejilla" id="otrosInpcCampos" hidden>
+          <div class="campo">Fecha de corte
+            <span data-fecha="corte" data-tipo="mes" data-etiqueta="Corte:"></span>
+          </div>
+          <p class="ayuda ancho">Factor = INPC del mes anterior al corte ÷ INPC del mes anterior al gasto (CFF art. 17-A, por analogía). Si el índice más reciente no se ha publicado, se usa el último disponible.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASO 4 -->
+    <section class="paso">
+      <div class="paso-cabeza"><span class="numero">4</span><div><h2>Documento Word</h2><p>Datos para el encabezado del documento que se descarga. <em>Opcional.</em></p></div></div>
+      <div class="rejilla">
+        <label class="campo">Expediente
+          <input name="docExpediente" type="text" placeholder="p. ej., 123/2024">
+        </label>
+        <label class="campo">Juicio o partes
+          <input name="docJuicio" type="text" placeholder="p. ej., Actor vs. Demandado">
+        </label>
+        <label class="campo">Juzgado
+          <input name="docJuzgado" type="text" placeholder="p. ej., Juzgado Primero de lo Familiar">
+        </label>
+      </div>
+    </section>
+
+    <div class="barra-acciones">
+      <button type="submit" class="principal">Calcular</button>
+      <button type="button" id="cargarEjemplo" class="secundario">Cargar ejemplo</button>
+      <button type="button" id="limpiar" class="enlace">Limpiar</button>
+      <span class="estado" id="estado" aria-live="polite"></span>
+    </div>
+  </form>
+
+  <section id="resultados" hidden>
+    <div class="resumen" id="resumen"></div>
+    <div class="descargas">
+      <button type="button" id="descargarWord" class="principal">⬇ Descargar Word</button>
+      <span class="ayuda">Desarrollo, planilla, otros conceptos, liquidación y fundamentos en un solo documento (.docx).</span>
+    </div>
+    <div id="avisos"></div>
+
+    <nav class="pestanas" role="tablist">
+      <button type="button" data-tab="desarrollo" class="activa">Desarrollo</button>
+      <button type="button" data-tab="comparativo">SM vs. INPC</button>
+      <button type="button" data-tab="planilla">Planilla</button>
+      <button type="button" data-tab="liquidacion">Liquidación</button>
+      <button type="button" data-tab="fundamentos">Fundamentos</button>
+    </nav>
+
+    <article class="tarjeta panel" id="panel-desarrollo">
+      <div class="acciones"><button type="button" id="copiarDesarrollo" class="secundario pequeno">Copiar texto para el escrito</button></div>
+      <div id="desarrollo"></div>
+    </article>
+    <article class="tarjeta panel" id="panel-comparativo" hidden>
+      <div class="tabla-envoltura"><table id="tablaComparativo"></table></div>
+    </article>
+    <article class="tarjeta panel" id="panel-planilla" hidden>
+      <div class="acciones">
+        <button type="button" id="descargarCSV" class="secundario pequeno">Descargar para Excel</button>
+        <button type="button" onclick="window.print()" class="secundario pequeno">Imprimir</button>
+      </div>
+      <div class="tabla-envoltura"><table id="tablaPlanilla"></table></div>
+    </article>
+    <article class="tarjeta panel" id="panel-liquidacion" hidden>
+      <div class="acciones"><button type="button" onclick="window.print()" class="secundario pequeno">Imprimir</button></div>
+      <h3>Proyecto de planilla de liquidación</h3>
+      <div class="tabla-envoltura"><table id="tablaLiquidacion"></table></div>
+    </article>
+    <article class="tarjeta panel" id="panel-fundamentos" hidden>
+      <div class="acciones"><button type="button" id="copiarFundamentos" class="secundario pequeno">Copiar fundamentos para el escrito</button></div>
+      <div id="fundamentos" class="fundamentos"></div>
+    </article>
+  </section>
+</main>
+
+<footer class="contenedor">
+  <p><strong>Fuentes:</strong> salario mínimo y MIR — resoluciones de la CONASAMI publicadas en el DOF (2010-2026); INPC — INEGI, serie 910392.
+  <strong>Fundamento:</strong> jurisprudencia 1a./J. 152/2024 (11a.), registro digital 2029528; Código Civil del Estado de Jalisco, art. 442.
+  Herramienta de apoyo: revise el resultado antes de presentarlo.</p>
+</footer>
+<script src="vendor/docx.umd.js"></script>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

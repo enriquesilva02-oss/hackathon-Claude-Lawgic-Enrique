@@ -1,0 +1,35 @@
+{
+  "verificado": "2026-10-31",
+  "salario_minimo": {
+    "titulo": "Actualización conforme al incremento del salario mínimo",
+    "metodo_porcentaje": "Hasta 2016, la pensión se incrementa en el mismo porcentaje en que aumentó el salario mínimo general: pensión del año anterior + (pensión × porcentaje de incremento).",
+    "metodo_mir": "A partir del 1 de enero de 2017, el salario mínimo general se integra por el salario vigente, el Monto Independiente de Recuperación (MIR, cantidad fija en pesos) y el incremento por fijación (porcentaje). En consecuencia, la pensión se divide entre 30 para obtener el monto diario, se le suma el MIR del año, sobre ese resultado se aplica el porcentaje de incremento por fijación y el diario actualizado se multiplica por 30.",
+    "jurisprudencia": {
+      "registro": "2029528",
+      "clave": "1a./J. 152/2024 (11a.)",
+      "instancia": "Primera Sala",
+      "epoca": "Undécima Época",
+      "tipo": "Jurisprudencia",
+      "materia": "Civil",
+      "fuente": "Gaceta del Semanario Judicial de la Federación, Libro 43, noviembre de 2024, Tomo III, Volumen 1, página 137",
+      "rubro": "PENSIÓN ALIMENTICIA. CUANDO SU INCREMENTO SE PACTA EN LA MISMA PROPORCIÓN QUE EL SALARIO MÍNIMO, PARA SU CÁLCULO DEBEN TOMARSE EN CUENTA TODOS LOS FACTORES QUE LO COMPONEN, INCLUIDO EL MONTO INDEPENDIENTE DE RECUPERACIÓN (MIR).",
+      "obligatoria_desde": "19 de noviembre de 2024",
+      "url": "https://sjf2.scjn.gob.mx/detalle/tesis/2029528"
+    },
+    "datos": "Los salarios mínimos, los montos del MIR y los porcentajes de incremento por fijación se tomaron de las resoluciones del H. Consejo de Representantes de la Comisión Nacional de los Salarios Mínimos publicadas en el Diario Oficial de la Federación. Hasta 2016, el porcentaje de cada año se obtiene de los salarios publicados para la zona metropolitana de Guadalajara (área geográfica B hasta el 26 de noviembre de 2012; área A desde el 27 de noviembre de 2012; área única desde el 1 de octubre de 2015), truncado a dos decimales. El ajuste de mitad de año de noviembre de 2012 (cambio de área B a A) no se aplica, porque el incremento pactado es anual. Desde 2019 se toma el salario del área «resto del país»."
+  },
+  "inpc": {
+    "titulo": "Actualización conforme al Índice Nacional de Precios al Consumidor (INPC)",
+    "norma": "Código Civil del Estado de Jalisco, artículo 442, segundo párrafo",
+    "texto": "Los alimentos que sean determinados por convenio o sentencia, tendrán un incremento automático mínimo equivalente al aumento porcentual anual correspondiente al Índice Nacional de Precios al Consumidor publicado por el Instituto Nacional de Estadística y Geografía, salvo que el deudor alimentario demuestre que sus ingresos no aumentaron en igual proporción.",
+    "metodo": "La pensión se ajusta cada enero con el factor que resulta de dividir el INPC de diciembre del año anterior entre el INPC de diciembre del año previo. En el primer ajuste, si la pensión se fijó a mitad de año, se divide el INPC de diciembre entre el INPC del mes anterior a la fijación. El factor se calcula a cuatro decimales y nunca es menor a uno.",
+    "fuente_datos": "Instituto Nacional de Estadística y Geografía (INEGI), Banco de Información Económica, serie 910392, Índice Nacional de Precios al Consumidor, índice general, base segunda quincena de julio de 2018 = 100.",
+    "url": "https://www.inegi.org.mx/temas/inpc/"
+  },
+  "otros_conceptos": {
+    "titulo": "Actualización de otros conceptos (colegiaturas, gastos médicos y similares)",
+    "metodo": "Cada adeudo se actualiza desde la fecha del gasto hasta la fecha de corte con el factor que resulta de dividir el INPC del mes anterior al más reciente del periodo entre el INPC del mes anterior al más antiguo del periodo. Si el índice más reciente aún no se ha publicado, se aplica el último publicado. El factor se calcula a cuatro decimales y nunca es menor a uno.",
+    "analogia": "Se sigue, por analogía, la mecánica de actualización del artículo 17-A del Código Fiscal de la Federación (texto vigente, última reforma publicada en el DOF el 9 de abril de 2026); no es una norma aplicable directamente a los alimentos."
+  },
+  "redondeo": "Todas las operaciones se truncan a dos decimales en cada paso, sin redondeo comercial."
+}

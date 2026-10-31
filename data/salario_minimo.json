@@ -1,0 +1,171 @@
+{
+ "descripcion": "Salario mínimo general aplicable a la zona metropolitana de Guadalajara (área B hasta nov-2012, área A hasta sep-2015, área única desde oct-2015; desde 2019, «resto del país»). Hasta 2016: % de incremento anual calculado con los salarios publicados en el DOF y truncado a 2 decimales. Desde 2017: MIR (pesos) + % de incremento por fijación.",
+ "fundamento": "Jurisprudencia 1a./J. 152/2024 (11a.), registro digital 2029528: el MIR forma parte del incremento cuando la pensión se pacta en proporción al salario mínimo.",
+ "consultado": "2026-10-31",
+ "anios": {
+  "2010": {
+   "metodo": "porcentaje",
+   "pct": 4.84,
+   "sm": 55.84,
+   "sm_anterior": 53.26,
+   "zona": "Área geográfica B",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5126139",
+   "dof": "23-12-2009",
+   "nota": "Área B ($53.26 → $55.84), DOF 23-12-2008 (codNota 5075377) y 23-12-2009."
+  },
+  "2011": {
+   "metodo": "porcentaje",
+   "pct": 4.1,
+   "sm": 58.13,
+   "sm_anterior": 55.84,
+   "zona": "Área geográfica B",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5172213",
+   "dof": "23-12-2010"
+  },
+  "2012": {
+   "metodo": "porcentaje",
+   "pct": 4.19,
+   "sm": 60.57,
+   "sm_anterior": 58.13,
+   "zona": "Área geográfica B",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5225150",
+   "dof": "19-12-2011"
+  },
+  "2013": {
+   "metodo": "porcentaje",
+   "pct": 3.89,
+   "sm": 64.76,
+   "sm_anterior": 62.33,
+   "zona": "Área geográfica A",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5283125",
+   "dof": "21-12-2012",
+   "nota": "Desde el 27-11-2012 la zona metropolitana de Guadalajara pasó del área B ($60.57) al área A ($62.33) (DOF 26-11-2012, codNota 5279120). Ese ajuste de mitad de año no se aplica a la pensión; el % anual se toma del área A: $62.33 → $64.76."
+  },
+  "2014": {
+   "metodo": "porcentaje",
+   "pct": 3.9,
+   "sm": 67.29,
+   "sm_anterior": 64.76,
+   "zona": "Área geográfica A",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5328055",
+   "dof": "26-12-2013"
+  },
+  "2015": {
+   "metodo": "porcentaje",
+   "pct": 4.17,
+   "sm": 70.1,
+   "sm_anterior": 67.29,
+   "zona": "Área geográfica A",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5377576",
+   "dof": "29-12-2014"
+  },
+  "2016": {
+   "metodo": "porcentaje",
+   "pct": 4.19,
+   "sm": 73.04,
+   "sm_anterior": 70.1,
+   "zona": "Área geográfica única",
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5420678",
+   "dof": "18-12-2015",
+   "nota": "Monto de $73.04 publicado en la nota aclaratoria del 18-12-2015 (codNota 5420747). Área geográfica única desde el 1-10-2015 (DOF 30-09-2015, codNota 5409968)."
+  },
+  "2017": {
+   "metodo": "mir",
+   "sm": 80.04,
+   "mir": 4.0,
+   "fijacion": 3.9,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5466000",
+   "dof": "19-12-2016",
+   "nota": "Cuadra con SM 2016 $73.04; texto exacto del MIR por citar."
+  },
+  "2018": {
+   "metodo": "mir",
+   "sm": 88.36,
+   "mir": 5.0,
+   "fijacion": 3.9,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5508586",
+   "dof": "21-12-2017"
+  },
+  "2019": {
+   "metodo": "mir",
+   "sm": 102.68,
+   "mir": 9.43,
+   "fijacion": 5.0,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5547224",
+   "dof": "26-12-2018",
+   "nota": "Cuadra con SM 2018; texto exacto del MIR por citar."
+  },
+  "2020": {
+   "metodo": "mir",
+   "sm": 123.22,
+   "mir": 14.67,
+   "fijacion": 5.0,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5582641",
+   "dof": "23-12-2019"
+  },
+  "2021": {
+   "metodo": "mir",
+   "sm": 141.7,
+   "mir": 10.46,
+   "fijacion": 6.0,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5608587",
+   "dof": "23-12-2020"
+  },
+  "2022": {
+   "metodo": "mir",
+   "sm": 172.87,
+   "mir": 16.9,
+   "fijacion": 9.0,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5637615",
+   "dof": "08-12-2021"
+  },
+  "2023": {
+   "metodo": "mir",
+   "sm": 207.44,
+   "mir": 15.72,
+   "fijacion": 10.0,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5673550",
+   "dof": "07-12-2022"
+  },
+  "2024": {
+   "metodo": "mir",
+   "sm": 248.93,
+   "mir": 27.4,
+   "fijacion": 6.0,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5711066",
+   "dof": "12-12-2023"
+  },
+  "2025": {
+   "metodo": "mir",
+   "sm": 278.8,
+   "mir": 12.85,
+   "fijacion": 6.5,
+   "verificado": true,
+   "fuente": "https://www.dof.gob.mx/nota_detalle.php?codigo=5745678",
+   "dof": "19-12-2024"
+  },
+  "2026": {
+   "metodo": "mir",
+   "sm": 315.04,
+   "mir": 17.01,
+   "fijacion": 6.5,
+   "verificado": true,
+   "fuente": "https://www.gob.mx/conasami/articulos/incremento-a-los-salarios-minimos-para-2026?idiom=es"
+  }
+ }
+}
